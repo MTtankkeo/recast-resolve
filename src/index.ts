@@ -1,1 +1,1 @@
-console.log("Hello, World!");
+export { SwcRederence } from "./modules/swc_reference";
