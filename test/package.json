@@ -1,0 +1,13 @@
+{
+    "type": "commonjs",
+    "scripts": {
+        "start": "node index.cjs"
+    },
+    "devDependencies": {
+        "@types/node": "^22.5.5"
+    },
+    "dependencies": {
+        "@swc/core": "^1.7.26",
+        "swc-reference": "file:.."
+    }
+}
