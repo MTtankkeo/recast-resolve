@@ -1,6 +1,7 @@
 import typescript from "rollup-plugin-typescript2";
 import terser from "@rollup/plugin-terser";
 
+const globals = {"@swc/core": "swc"}
 const plugins = [
     terser(),
     typescript({
@@ -16,8 +17,9 @@ const plugins = [
 export default {
     plugins: plugins,
     input: "./src/index.ts",
+    external: ["@swc/core"],
     output: [
-        { file: "./dist/index.esm.js", format: "esm", name: "YourProjectName" },
-        { file: "./dist/index.umd.js", format: "umd", name: "YourProjectName" }
+        { file: "./dist/index.esm.js", format: "esm", name: "YourProjectName", globals },
+        { file: "./dist/index.umd.js", format: "umd", name: "YourProjectName", globals }
     ]
 }
